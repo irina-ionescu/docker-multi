@@ -7,7 +7,7 @@ before_install:
   #-f to use custom Dockerfile; build context is ./client
 
 scripts:
-  - docker run -e CI=true irinaionescu/react-test npm test
+  - docker run -e CI=true irinaionescu/react-test npm test --passWithNoTests
 
 
 after_success:
