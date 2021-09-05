@@ -7,8 +7,8 @@ before_install:
   #-f to use custom Dockerfile; build context is ./client
 
 scripts:
-  - docker run irinaionescu/react-test npm test -- --coverage
-  # -- --coverage : make sure npm test script exits when finished with status code
+  - docker run -e CI=true irinaionescu/react-test npm test
+
 
 after_success:
   - docker build -t irinaionescu/multi-client ./client
